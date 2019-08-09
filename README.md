@@ -1,6 +1,6 @@
 # pulsar-cli
 
-**pulsar-cli** is a toolkit for using the Pulsar [docker images](https://hub.docker.com/r/eftg/main/tags/).
+**pulsar-cli** is a toolkit for using the Pulsar [docker images](https://hub.docker.com/r/blkcc/pulsar-core/tags/).
 
 Its purpose is to simplify the deployment of `Pulsar` nodes. Compatible with Ubuntu 18.04 LTS.
 
@@ -25,11 +25,11 @@ Commands:
     setup - initializes script with all requirements
     install - pulls latest docker image from server (no compiling)
     dlblocks - download the blockchain to speed up your first start
-    replay - starts EFTG container (in replay mode)
-    start - starts EFTG container
-    stop - stops EFTG container
-    status - show status of EFTG container
-    restart - restarts EFTG container
+    replay - starts PULSAR container (in replay mode)
+    start - starts PULSAR container
+    stop - stops PULSAR container
+    status - show status of PULSAR container
+    restart - restarts PULSAR container
     witness - witness node setup
     disable_witness - disable a witness
     enable_witness - re-enable a witness
@@ -38,8 +38,8 @@ Commands:
     remote_wallet - open cli_wallet in the container connecting to a remote seed
     rpcnode - setup and configure an RPC node
     enter - enter a bash session in the container
-    logs - show all logs inc. docker logs, and EFTG logs
-    change_password - change the password of an EFTG account
+    logs - show all logs inc. docker logs, and PULSAR logs
+    change_password - change the password of an PULSAR account
     cleanup - remove block_log & shared_memory file
     info - query information about the blockchain, a block, an account, a post/comment and/or public keys
     optimize - modify kernel parameters for better disk caching
