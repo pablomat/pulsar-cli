@@ -32,7 +32,7 @@ BLUE="$(tput setaf 4)"
 RESET="$(tput sgr0)"
 : "${DK_TAG="blkcc/pulsar-core:latest"}"
 #SHM_DIR=/dev/shm
-: "${REMOTE_WS="ws://kapteyn.westeurope.cloudapp.azure.com:8089"}"
+: "${REMOTE_WS="ws://luyten.westeurope.cloudapp.azure.com:8089"}"
 PULSAR_DEF="/usr/local/pulsard-default/bin"
 PULSAR_FULL="/usr/local/pulsard-full/bin"
 LOGOPT=("--log-opt" "max-size=100m" "--log-opt" "max-file=50")
