@@ -1,0 +1,24 @@
+# Console appender definition json: {"appender", "stream"}
+log-console-appender = {"appender":"stderr","stream":"std_error"}
+
+# File appender definition json:  {"appender", "file"}
+log-file-appender = {"appender":"p2p","file":"logs/p2p/p2p.log"}
+
+# Logger definition json: {"name", "level", "appender"}
+log-logger = {"name":"default","level":"info","appender":"stderr"}
+log-logger = {"name":"p2p","level":"info","appender":"stderr"}
+
+webserver-ws-endpoint = 0.0.0.0:8090
+p2p-endpoint = 0.0.0.0:2001
+
+p2p-seed-node = 40.113.101.44:2001               # luyten.westeurope.cloudapp.azure.com
+
+shared-file-size = 2G
+
+# Plugin(s) to enable, may be specified multiple times
+plugin = webserver p2p json_rpc witness
+
+plugin = database_api condenser_api 
+
+#witness = "witness-name"
+#private-key = owner-private-key
