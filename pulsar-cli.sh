@@ -129,8 +129,8 @@ dlblocks() {
     /usr/bin/sudo rm -f "${DATADIR}/witness/blockchain/block_log"
     /usr/bin/sudo rm -f "${DATADIR}/witness/blockchain/block_log.index"
     echo "Downloading PULSAR block logs..."
-    /usr/bin/wget --quiet "https://seed.blkcc.xyz/block_log" -O "${DATADIR}/witness/blockchain/block_log"
-    /usr/bin/wget --quiet "https://seed.blkcc.xyz/MD5SUM" -O "${DATADIR}/witness/blockchain/MD5SUM"
+    /usr/bin/wget --quiet "https://seed.blkcc.xyz/pulsar/block_log" -O "${DATADIR}/witness/blockchain/block_log"
+    /usr/bin/wget --quiet "https://seed.blkcc.xyz/pulsar/MD5SUM" -O "${DATADIR}/witness/blockchain/MD5SUM"
     echo "Verifying MD5 checksum... this may take a while..."
     cd "${DATADIR}/witness/blockchain" ; md5sum -c MD5SUM ; cd -
     echo "${GREEN}FINISHED. Blockchain ledger downloaded and verified${RESET}"
