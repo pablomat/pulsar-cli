@@ -1,6 +1,6 @@
-# pulsar-cli
+# Pulsar-cli
 
-**pulsar-cli** is a toolkit for using the Pulsar [docker images](https://hub.docker.com/r/blkcc/pulsar-core/tags/).
+**Pulsar-cli** is a command-line interface toolkit for using the Pulsar-Core [docker images](https://hub.docker.com/r/blkcc/pulsar-core/tags/).
 
 Its purpose is to simplify the deployment of `Pulsar` nodes. Compatible with Ubuntu 18.04 LTS.
 
@@ -11,7 +11,7 @@ bash <(wget -qO- "https://gateway.ipfs.io/ipfs/QmRTJWEwwDPqeUsnBs8DUaBnX1rLFxifk
 
 Features:
 
- - Automatic docker installer
+ - Automatic Docker installer
  - Single command to download and install block_log from trusted Pulsar servers
  - Automatically installs a working example configuration for seeds, which can easily be customized for witnesses and full nodes
  - Quick access to common actions such as start, stop, local wallet, remote wallet, and much more
@@ -57,7 +57,7 @@ cd ~/pulsar-cli
 
 # LICENSE
 
-pulsar-cli and the associated docker images were built by @pablomat ([github](https://github.com/pablomat))
+Pulsar-cli and the associated docker images were built by @pablomat ([github](https://github.com/pablomat))
 
 GNU General Public License v3.0
 
