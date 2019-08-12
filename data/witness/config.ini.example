@@ -13,6 +13,7 @@ p2p-endpoint = 0.0.0.0:2001
 
 p2p-seed-node = 40.113.101.44:2001               # luyten.westeurope.cloudapp.azure.com
 p2p-seed-node = 137.117.165.158:2003             # centauri.westeurope.cloudapp.azure.com
+p2p-seed-node = 40.74.8.95:2001                  # wolf1 seed
 
 shared-file-size = 2G
 

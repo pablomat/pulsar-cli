@@ -17,6 +17,7 @@ shared-file-size = 20G
 
 p2p-seed-node = 40.113.101.44:2001               # luyten.westeurope.cloudapp.azure.com (RPC node)
 p2p-seed-node = 137.117.165.158:2003             # centauri.westeurope.cloudapp.azure.com (Seed node)
+p2p-seed-node = 40.74.8.95:2001                  # wolf1 (Seed node)
 
 # Plugin(s) to enable, may be specified multiple times
 plugin = chain webserver p2p json_rpc witness account_by_key tags follow market_history account_history
