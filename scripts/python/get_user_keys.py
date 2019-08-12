@@ -31,7 +31,7 @@ while True:
     except Exception as exception:
         assert type(exception).__name__ == 'AccountDoesNotExistsException'
         assert exception.__class__.__name__ == 'AccountDoesNotExistsException'
-        sys.exit("The account provided doesn't exist in the EFTG Blockchain. Wrong account " + args.account[0])
+        sys.exit("The account provided doesn't exist in the Pulsar Blockchain. Wrong account " + args.account[0])
 
 password = args.password[0]
 
@@ -48,7 +48,7 @@ for role in ['owner', 'active', 'posting', 'memo']:
         blk_auths_public[role] = str(account.json()[role]["key_auths"][0][0])
 
     if key_auths_public[role] != blk_auths_public[role]:
-        sys.exit("Password provided is not correct. Public " + role + " key " + key_auths_public[role] + " doesn't match the one in the EFTG blockchain " + blk_auths_public[role])
+        sys.exit("Password provided is not correct. Public " + role + " key " + key_auths_public[role] + " doesn't match the one in the Pulsar blockchain " + blk_auths_public[role])
 
 data = {"name":account['name'],"wif":password,"owner":[{"type":"public","value":key_auths_public["owner"]},{"type":"private","value":key_auths_private["owner"]}],"active":[{"type":"public","value":key_auths_public["active"]},{"type":"private","value":key_auths_private["active"]}],"posting":[{"type":"public","value":key_auths_public["posting"]},{"type":"private","value":key_auths_private["posting"]}],"memo":[{"type":"public","value":key_auths_public["memo"]},{"type":"private","value":key_auths_private["memo"]}]}
 
