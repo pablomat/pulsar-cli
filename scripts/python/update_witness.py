@@ -56,7 +56,7 @@ def checkkey(username, password, role):
 
 parser = ArgumentParser()
 parser.add_argument('operation', help="Type of operation (update/disable)", type=str, nargs=1)
-parser.add_argument('account', help="Name of the EFTG account", type=str, nargs=1)
+parser.add_argument('account', help="Name of the Pulsar account", type=str, nargs=1)
 parser.add_argument('privateactivekey', help="Private active key of the account", type=str, nargs=1)
 parser.add_argument('--publicownerkey', help="Public owner key of the account", type=str)
 parser.add_argument('--url', help="URL to display for this witness account", type=str)
@@ -126,7 +126,7 @@ elif (args.operation[0] == "disable"):
         current = wit.json()["props"]
         my_url = str(wit.json()["url"])
     else:
-         sys.exit("The account provided is not a valid witness in the EFTG Blockchain. Wrong witness " + args.account[0])
+         sys.exit("The account provided is not a valid witness in the Pulsar Blockchain. Wrong witness " + args.account[0])
 
 else:
     parser.error('Invalid input for argument "operation". ' + args.operation[0] + ' is invalid.' + ' Valid options are update or disable') 
