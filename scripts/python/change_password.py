@@ -23,14 +23,14 @@ set_shared_steem_instance(stm)
 prefix = stm.prefix
 
 parser = ArgumentParser()
-parser.add_argument('account', help="Name of the EFTG Account", type=str, nargs=1)
-parser.add_argument('--store-credentials', help="If used, a file with all new credentials will be saved at the provided location. E.G.: \"/home/user/eftg-cli/.credentials.json\"", type=str)
+parser.add_argument('account', help="Name of the Pulsar Account", type=str, nargs=1)
+parser.add_argument('--store-credentials', help="If used, a file with all new credentials will be saved at the provided location. E.G.: \"/home/user/pulsar-cli/.credentials.json\"", type=str)
 args = parser.parse_args()
 
 if checkacc(args.account[0]): 
     acc = Account(args.account[0])
 else:
-    sys.exit("The account provided is not a valid account in the EFTG Blockchain. Wrong account " + args.account[0])
+    sys.exit("The account provided is not a valid account in the Pulsar Blockchain. Wrong account " + args.account[0])
 
 if args.store_credentials:
     fullpath = args.store_credentials
