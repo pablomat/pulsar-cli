@@ -55,9 +55,9 @@ def checkkey(username, password, role):
         return False
 
 parser = ArgumentParser()
-parser.add_argument('witness', help="Name of the EFTG Witness", type=str, nargs=1)
+parser.add_argument('witness', help="Name of the Pulsar Witness", type=str, nargs=1)
 parser.add_argument('privateactivekey', help="Private active key of the Witness", type=str, nargs=1)
-parser.add_argument('baseprice', help="New feed price in EUR to publish for a 1.000 EFTG quote. E.G.: \"4.700\"", type=float, nargs=1)
+parser.add_argument('baseprice', help="New feed price in EUR to publish for a 1.000 Pulsar quote. E.G.: \"4.700\"", type=float, nargs=1)
 args = parser.parse_args()
 
 if checkwit(args.witness[0]):
@@ -81,6 +81,6 @@ if checkwit(args.witness[0]):
     print(json.dumps(output, indent=4))
 
 else:
-     sys.exit("The account provided is not a valid witness in the EFTG Blockchain. Wrong witness " + args.account[0])
+     sys.exit("The account provided is not a valid witness in the Pulsar Blockchain. Wrong witness " + args.account[0])
 
 # vim: set filetype=sh ts=4 sw=4 tw=0 wrap et:
