@@ -54,7 +54,7 @@ def checkkey(username, password, role):
         return False
 
 parser = ArgumentParser()
-parser.add_argument('account', help="Name of the EFTG account", type=str, nargs=1)
+parser.add_argument('account', help="Name of the Pulsar account", type=str, nargs=1)
 parser.add_argument('privateactivekey', help="Private active key of the account", type=str, nargs=1)
 parser.add_argument('--name', help="Display name", type=str)
 parser.add_argument('--about', help="About", type=str)
@@ -102,6 +102,6 @@ if checkacc(args.account[0]):
     print(json.dumps(output, indent=4))
 
 else:
-    sys.exit("The account provided is not a valid account in the EFTG Blockchain. Wrong account " + args.account[0])
+    sys.exit("The account provided is not a valid account in the Pulsar Blockchain. Wrong account " + args.account[0])
 
 # vim: set filetype=sh ts=4 sw=4 tw=0 wrap et:
