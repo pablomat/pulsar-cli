@@ -481,9 +481,9 @@ replay() {
     if [[ ! -s "${DATADIR}/witness/blockchain/block_log" ]]; then { printf "%s\\n" "${RED}ERROR: There's no ledger available to replay.${RESET}" "$ pulsar-cli.sh dlblocks"; return 1; } fi
     echo "Running container & replay..."
     if [[ $(/usr/bin/diff -q "${DATADIR}/witness/config.ini" "${DATADIR}/witness/config.rpc.ini.example" &>/dev/null) -eq 0 ]]; then
-        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/steemd -d /pulsar/witness --replay-blockchain
+        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/pulsard -d /pulsar/witness --replay-blockchain
     else
-        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_DEF}"/steemd -d /pulsar/witness --replay-blockchain
+        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_DEF}"/pulsard -d /pulsar/witness --replay-blockchain
     fi
     echo "Started."
 }
@@ -503,9 +503,9 @@ rpcnode() {
     echo "Running RPC node container..."
     if [[ -s "${DATADIR}/witness/blockchain/block_log" ]]; then
         replay
-        #docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/steemd -d /pulsar/witness --replay-blockchain
+        #docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/pulsard -d /pulsar/witness --replay-blockchain
     else
-        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/steemd -d /pulsar/witness
+        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_FULL}"/pulsard -d /pulsar/witness
     fi
     echo "Started."
 }
@@ -515,7 +515,7 @@ start() {
     if seed_exists; then
         docker start $DOCKER_NAME
     else
-        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_DEF}"/steemd -d /pulsar/witness
+        docker run -u "$(id -u)" "${DOCKEROPT[@]}" "${DPORTS[@]}" -v "${DATADIR}":/pulsar "${LOGOPT[@]}" -d --name "${DOCKER_NAME}" -t pulsar_img "${PULSAR_DEF}"/pulsard -d /pulsar/witness
     fi
 }
 
