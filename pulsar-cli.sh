@@ -291,7 +291,7 @@ cleanup() {
                     if ! /usr/bin/git checkout -q master; then { echo "Cannot switch to master branch in this GIT repository"; exit 1; } fi
                     if ! /usr/bin/git pull -q; then { echo "Error while doing git pull in ${PD}/pulsar-cli"; exit 1; } fi
                     hash="$(/usr/bin/git rev-list --parents HEAD | /usr/bin/tail -1)"
-                    if [[ x"${hash}" != "x9c035091ce1249666ec08555a122b96414e679b8" ]]; then { echo "Repository in ${my_path} doesn't match github.com/pablomat/pulsar-cli"; exit 1; } fi
+                    if [[ x"${hash}" != "xd65419b2a13af1a0aadee0bdb0bc4febfaf9e8be" ]]; then { echo "Repository in ${my_path} doesn't match github.com/pablomat/pulsar-cli"; exit 1; } fi
                     /bin/rm -rf "${my_path}"
                 fi
             fi
