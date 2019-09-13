@@ -9,7 +9,7 @@ RED="$(tput setaf 1)"
 GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 4)"
 RESET="$(tput sgr0)"
-BEEM_VER="0.20.18"
+BEEM_VER="0.21.0"
 
 check_beem() {
     local beem_installed="True"
