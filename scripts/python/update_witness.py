@@ -7,15 +7,7 @@ from beemgraphenebase.account import PrivateKey, PublicKey
 from argparse import ArgumentParser
 from beem.instance import set_shared_steem_instance
 
-stmf = Steem(node=["https://apidev.blkcc.xyz"], custom_chains={"PULSAR":
-    {'chain_assets': [{'asset': '@@000000013', 'id': 0, 'precision': 3, 'symbol': 'EUR'},
-                      {'asset': '@@000000021', 'id': 1, 'precision': 3, 'symbol': 'PULSE'},
-                      {'asset': '@@000000037', 'id': 2, 'precision': 6, 'symbol': 'VESTS'}],
-     'chain_id': '07c687c01f134adaf217a9b9367d1cef679c3c020167fdd25ee8c403f687528e',
-     'min_version': '0.101.0',
-     'prefix': 'EUR'}
-    }
-)
+stmf = Steem(node=["https://apidev.blkcc.xyz"])
 
 def checkwit(username):
     try:
@@ -131,15 +123,7 @@ elif (args.operation[0] == "disable"):
 else:
     parser.error('Invalid input for argument "operation". ' + args.operation[0] + ' is invalid.' + ' Valid options are update or disable') 
 
-stm = Steem(node=["https://apidev.blkcc.xyz"], keys=[args.privateactivekey[0]], custom_chains={"PULSAR":
-    {'chain_assets': [{'asset': '@@000000013', 'id': 0, 'precision': 3, 'symbol': 'EUR'},
-                      {'asset': '@@000000021', 'id': 1, 'precision': 3, 'symbol': 'PULSE'},
-                      {'asset': '@@000000037', 'id': 2, 'precision': 6, 'symbol': 'VESTS'}],
-     'chain_id': '07c687c01f134adaf217a9b9367d1cef679c3c020167fdd25ee8c403f687528e',
-     'min_version': '0.101.0',
-     'prefix': 'EUR'}
-    }
-)
+stm = Steem(node=["https://apidev.blkcc.xyz"])
 
 set_shared_steem_instance(stm)
 
