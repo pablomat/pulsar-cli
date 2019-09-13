@@ -40,7 +40,7 @@ DOCKEROPT=("--restart" "always")
 PORTS="2001,8089,8090"
 BADGER_API="https://api.microbadger.com/v1/images/"
 RPC_NODE="https://apidev.blkcc.xyz"
-BEEM_VER="0.20.18"
+BEEM_VER="0.21.0"
 
 IFS=","
 DPORTS=()
