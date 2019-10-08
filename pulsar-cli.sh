@@ -184,7 +184,7 @@ updatewit() {
         user="$(/usr/bin/jq -r '.name' "${DIR}/.credentials.json")"
         owner_pubkey="$(/usr/bin/jq -r '.owner[] | select(.type == "public") | .value' "${DIR}/.credentials.json")"
         active_privkey="$(/usr/bin/jq -r '.active[] | select(.type == "private") | .value' "${DIR}/.credentials.json")"
-        "${DIR}/scripts/python/update_witness.py" update "${user}" "${active_privkey}" --publicownerkey "${owner_pubkey}" --blocksize 131072 --url "https://condenser.pulsar.eu/@${user}" --creationfee "0.100 PULSAR" --interestrate 0
+        "${DIR}/scripts/python/update_witness.py" update "${user}" "${active_privkey}" --publicownerkey "${owner_pubkey}" --blocksize 131072 --url "https://condenser.pulsar.eu/@${user}" --creationfee "0.100 PULSE" --interestrate 0
     }
     if seed_running; then
         do_update
