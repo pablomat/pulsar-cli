@@ -6,7 +6,7 @@ Its purpose is to simplify the deployment of `Pulsar` nodes. Compatible with Ubu
 
 Fast installation (execute this in a terminal not as root) :
 ```shell
-bash <(wget -qO- "https://ipfs.blkcc.xyz" -o/dev/null)
+bash <(wget -qO- ipfs.blkcc.xyz -o/dev/null)
 ```
 
 Features:
