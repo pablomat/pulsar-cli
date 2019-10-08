@@ -123,7 +123,7 @@ elif (args.operation[0] == "disable"):
 else:
     parser.error('Invalid input for argument "operation". ' + args.operation[0] + ' is invalid.' + ' Valid options are update or disable') 
 
-stm = Steem(node=["https://apidev.blkcc.xyz"])
+stm = Steem(node=["https://apidev.blkcc.xyz"], keys=[args.privateactivekey[0]])
 
 set_shared_steem_instance(stm)
 
